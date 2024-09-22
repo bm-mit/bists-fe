@@ -19,7 +19,14 @@ export default function ClientsProvider({
   children: React.ReactNode;
 }) {
   const [clients, setClients] = useState<Array<Client>>([
-    { id: 1, name: 'mit', indicators: ['heart rate', 'spo2'] },
+    {
+      id: 1,
+      name: 'mit',
+      indicators: [
+        { id: 1, name: 'heart rate', values: [70, 71, 72, 70, 69, 67, 71] },
+        { id: 2, name: 'spo2' },
+      ],
+    },
     { id: 2, name: 'mit2' },
   ]);
 

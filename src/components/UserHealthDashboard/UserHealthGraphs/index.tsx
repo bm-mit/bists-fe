@@ -12,10 +12,9 @@ export default function UserHealthGraphs({ client }: UserHealthGraphsProps) {
       <hr className="mb-2" />
       <p>{!client.indicators && "This client don't have any indicators"}</p>
 
-      <div className="flex h-32 gap-4">
-        {client.indicators?.map((indicator, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <UserSingleGraph key={index} indicator={indicator} />
+      <div className="flex min-h-32 gap-2 overflow-x-auto">
+        {client.indicators?.map((indicator) => (
+          <UserSingleGraph key={indicator.id} indicator={indicator} />
         ))}
       </div>
     </div>
