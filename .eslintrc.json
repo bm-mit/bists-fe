@@ -35,6 +35,7 @@
         "singleQuote": true
       }
     ],
+    "import/prefer-default-export": 0,
     "tailwindcss/classnames-order": "warn",
     "tailwindcss/no-custom-classname": [
       "warn",

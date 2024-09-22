@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
+import { openSansFont } from '@/components/utils/font';
 
 export const metadata: Metadata = {
-  title: "BiSTS",
+  title: 'BiSTS',
 };
 
 export default function RootLayout({
@@ -11,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={openSansFont.className}>
       <body>{children}</body>
     </html>
   );
