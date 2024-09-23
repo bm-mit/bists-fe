@@ -21,13 +21,13 @@ export default function ClientsProvider({
   const [clients, setClients] = useState<Array<Client>>([
     {
       id: 1,
-      name: 'mit',
+      name: 'patient 1',
       indicators: [
         { id: 1, name: 'heart rate', values: [70, 71, 72, 70, 69, 67, 71] },
-        { id: 2, name: 'spo2' },
+        { id: 2, name: 'spo2', values: [98, 98, 98, 99, 97, 98, 97] },
       ],
     },
-    { id: 2, name: 'mit2' },
+    { id: 2, name: 'patient 2' },
   ]);
 
   const clientsMemo = useMemo<ClientsContextType>(

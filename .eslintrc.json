@@ -51,6 +51,12 @@
         "namedComponents": "function-declaration",
         "unnamedComponents": "arrow-function"
       }
+    ],
+    "react/require-default-props": [
+      "error",
+      {
+        "functions": "defaultArguments"
+      }
     ]
   }
 }
