@@ -2,32 +2,37 @@
 
 import {
   CartesianGrid,
+  Legend,
   Line,
   LineChart,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from 'recharts';
+import { useEffect, useState } from 'react';
 
 export interface LineGraphProps {
   label?: string;
-  values?: number[];
+  values?: { time: string; value: number }[];
 }
 
 export default function LineGraph({
   label = undefined,
   values = [],
 }: LineGraphProps) {
-  const data = values.map((value) => ({ value }));
+  values = values.map((v) => ({ ...v })).slice(-100);
 
   return (
     <>
       <p className="text-center">{label}</p>
-      <LineChart width={600} height={300} data={data}>
-        <CartesianGrid stroke="#ccc" />
+      {/* Key forces a full re-render of the LineChart */}
+      <LineChart data={values} width={600} height={300}>
+        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="time" />
         <YAxis />
         <Tooltip />
+        <Legend />
         <Line type="monotone" dataKey="value" stroke="#8884d8" />
       </LineChart>
     </>

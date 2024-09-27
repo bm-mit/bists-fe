@@ -3,9 +3,9 @@ import { Indicator } from '@/types/entities/indicators.entity';
 export class Client {
   id?: number;
 
-  name?: string;
+  username?: string;
 
-  indicators?: Indicator[];
+  indicators: Indicator[] = [];
 
   constructor(props: Partial<Client>) {
     Object.assign(this, props);

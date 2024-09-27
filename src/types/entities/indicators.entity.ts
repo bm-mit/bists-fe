@@ -3,7 +3,7 @@ export class Indicator {
 
   name?: string;
 
-  values?: number[];
+  values: { time: string; value: number }[] = [];
 
   constructor(props: Partial<Indicator>) {
     Object.assign(this, props);

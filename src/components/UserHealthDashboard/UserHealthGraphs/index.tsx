@@ -8,13 +8,14 @@ export interface UserHealthGraphsProps {
 export default function UserHealthGraphs({ client }: UserHealthGraphsProps) {
   return (
     <div className="w-full rounded-xl border border-gray-700 p-4">
-      <div className="font-mono font-bold">{client.name}</div>
+      <div className="font-mono font-bold">{client.username}</div>
       <hr className="mb-2" />
-      {client.indicators ? (
+      {client.indicators && client.indicators.length ? (
         <div className="flex min-h-32 gap-2 overflow-x-auto">
-          {client.indicators?.map((indicator) => (
-            <UserSingleGraph key={indicator.id} indicator={indicator} />
-          ))}
+          {client.indicators?.map((indicator, index) => {
+            console.log(indicator);
+            return <UserSingleGraph key={index} indicator={indicator} />;
+          })}
         </div>
       ) : (
         <p>This client don&apos;t have any indicators</p>
